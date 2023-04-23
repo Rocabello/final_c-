@@ -11,22 +11,32 @@ System.Console.WriteLine("Введите кол-во строк в исходн�
 int StartArray = int.Parse(Console.ReadLine());
 
 string[] Strings = new string[StartArray];
-for (int i =0; i< StartArray; i++){
-    System.Console.WriteLine($"Строка №{i+1}: ");
+for (int i = 0; i < StartArray; i++)
+{
+    System.Console.WriteLine($"Строка №{i + 1}: ");
     Strings[i] = System.Console.ReadLine();
 }
-
+Console.Write($"({String.Join(" | ", Strings)})");
+Console.Write(" --> ");
+Console.WriteLine($"({String.Join(" | ", DoArray(Strings))})");
 
 
 //--------------Метоод----------
 
-string[] DoArray (string[] array){
+string[] DoArray(string[] array)
+{
     string[] Array = new string[array.Length];
     int count = 0;
-    foreach (string el in array){
-        if (el.Length <=3){
+    foreach (string el in array)
+    {
+        if (el.Length <= 3)
+        {
             Array[count] = el;
             count++;
         }
     }
+    string[] SolutionArray = new string[count];
+    for (int i = 0; i < count; i++)
+        SolutionArray[i] = Array[i];
+    return Array;
 }
