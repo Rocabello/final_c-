@@ -18,3 +18,15 @@ for (int i =0; i< StartArray; i++){
 
 
 
+//--------------Метоод----------
+
+string[] DoArray (string[] array){
+    string[] Array = new string[array.Length];
+    int count = 0;
+    foreach (string el in array){
+        if (el.Length <=3){
+            Array[count] = el;
+            count++;
+        }
+    }
+}
